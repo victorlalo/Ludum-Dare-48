@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
@@ -22,9 +21,10 @@ public class Meditator : MonoBehaviour
 
     [SerializeField] private Ease ease;
     [SerializeField] private float easeDuration = 0.4f;
-    
 
-    private KeyCode inBreath = KeyCode.Mouse0;
+    [SerializeField] private float rotationSpeed = 20f;
+    
+    private KeyCode inBreath = KeyCode.Space;
 
     private int MaxGracePeriodFrames = 60 * 4;
     private int currentGracePeriod;
@@ -58,6 +58,16 @@ public class Meditator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Rotate(Vector3.forward, Time.deltaTime * rotationSpeed);
+        }
+        
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Rotate(Vector3.forward, Time.deltaTime * -rotationSpeed);
+        }
+        
         breathPeriod = Mathf.Cos(Time.time * breathSpeed / Mathf.PI);
 
         var previousScale = breathIndicatorTransform.localScale.x;
@@ -122,8 +132,8 @@ public class Meditator : MonoBehaviour
 
     private void ResetFloatTweener()
     {
-        floatTweener = playerModel.DOMoveY(floatTarget.position.y, 1).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
-        floatTweener.OnKill(() => playerModel.DOMoveY(originalYPos, easeDuration).SetEase(ease));
+        // floatTweener = playerModel.DOMoveY(floatTarget.position.y, 1).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
+        // floatTweener.OnKill(() => playerModel.DOMoveY(originalYPos, easeDuration).SetEase(ease));
     }
 
     private void OnTriggerEnter(Collider other)
