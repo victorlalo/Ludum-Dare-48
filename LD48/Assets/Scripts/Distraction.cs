@@ -16,21 +16,15 @@ public class Distraction : MonoBehaviour
     public string Text;
     public string RemainingText;
 
-    [SerializeField] GameObject[] icons;
-    
     // Start is called before the first frame update
     void Start()
     {
         RemainingText = Text;
-
-        int iconNum = UnityEngine.Random.Range(0,icons.Length);
-        Instantiate(icons[iconNum], transform.position, Quaternion.identity, transform);
     }
 
     // Update is called once per frame
     void Update()
     {
-        print($"Player pos = {Player.position}");
         transform.position = Vector3.MoveTowards(transform.position, Player.position, Speed);
         if (!string.IsNullOrEmpty(Input.inputString) && RemainingText.StartsWith(Input.inputString, StringComparison.InvariantCultureIgnoreCase))
         {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
@@ -124,6 +125,19 @@ public class Meditator : MonoBehaviour
         floatTweener = playerModel.DOMoveY(floatTarget.position.y, 1).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
         floatTweener.OnKill(() => playerModel.DOMoveY(originalYPos, easeDuration).SetEase(ease));
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        var distraction = other.gameObject.GetComponent<Distraction>();
+        if (distraction == null)
+        {
+            return;
+        }
+        
+        HandleBreathFuckUp();
+        Destroy(other.gameObject);
+    }
+
 
     private float Remap(float origFrom, float origTo, float targetFrom, float targetTo, float value)
     {

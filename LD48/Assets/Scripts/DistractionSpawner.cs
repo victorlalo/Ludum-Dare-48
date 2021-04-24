@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DistractionSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject distractionPrefab;
+    [SerializeField] GameObject[] distractionPrefabs;
     [SerializeField] private GameObject player;
     [SerializeField] private float radius = 50;
     [SerializeField] private bool spawning = true;
@@ -31,8 +31,11 @@ public class DistractionSpawner : MonoBehaviour
             Vector3 unitSemiCircle = Random.onUnitSphere;
             unitSemiCircle = new Vector3(unitSemiCircle.x, Mathf.Abs(unitSemiCircle.y), 0);
             
-            var distraction = 
-                Instantiate(distractionPrefab, unitSemiCircle * radius + player.transform.position, Quaternion.identity).GetComponent<Distraction>();
+            var distractionGameObject = 
+                Instantiate(distractionPrefabs[Random.Range(0, distractionPrefabs.Length)], unitSemiCircle * radius + player.transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
+
+            var distraction = distractionGameObject.GetComponent<Distraction>();
+            // distractionGameObject.transform.Rotate(distraction.transform.up, 90);
             //Debug.Log(distraction.transform.position);
             distraction.Player = player.transform;
             distraction.Speed = distractionSpeed;
