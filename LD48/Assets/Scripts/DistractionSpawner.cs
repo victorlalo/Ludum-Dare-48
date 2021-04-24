@@ -39,6 +39,7 @@ public class DistractionSpawner : MonoBehaviour
             //Debug.Log(distraction.transform.position);
             distraction.Player = player.transform;
             distraction.Speed = distractionSpeed;
+            distraction.Text = "placeholder";
             yield return new WaitForSeconds(spawnDelay);
         }
     }
