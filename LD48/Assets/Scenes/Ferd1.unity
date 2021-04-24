@@ -286,6 +286,8 @@ MonoBehaviour:
   concentrationBar: {fileID: 1745899334}
   playerModel: {fileID: 565693213}
   floatTarget: {fileID: 1985650512}
+  ease: 25
+  easeDuration: 0.81
 --- !u!4 &565693213 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7649876306101335660, guid: 0b0ea72f3ab657940af4ecefa57a81e7, type: 3}

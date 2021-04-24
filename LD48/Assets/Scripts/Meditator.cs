@@ -17,6 +17,11 @@ public class Meditator : MonoBehaviour
     [SerializeField] private Transform playerModel;
     [SerializeField] private Transform floatTarget;
     private Tweener floatTweener;
+    private float originalYPos;
+
+    [SerializeField] private Ease ease;
+    [SerializeField] private float easeDuration = 0.4f;
+    
 
     private KeyCode inBreath = KeyCode.Mouse0;
 
@@ -44,12 +49,8 @@ public class Meditator : MonoBehaviour
         currentConcentration = MaxConcentration;
         originalBreathIndicatorColor = breathIndicatorMesh.material.color;
         originalConcentrationBarScale = concentrationBar.transform.localScale.x;
-
-
-        var originalYPos = playerModel.position.y;
-        floatTweener = playerModel.DOMoveY(floatTarget.position.y, 1).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
-        floatTweener.Pause();
-        floatTweener.OnKill(() => playerModel.DOMoveY(originalYPos, 0.2f).SetEase(Ease.InOutCubic));
+        
+        originalYPos = playerModel.position.y;
         StartCoroutine(StartFloating());
     }
 
@@ -57,10 +58,10 @@ public class Meditator : MonoBehaviour
     void Update()
     {
         breathPeriod = Mathf.Cos(Time.time * breathSpeed / Mathf.PI);
-        
+
         var previousScale = breathIndicatorTransform.localScale.x;
         var scale = Remap(-1, 1, 0.3f, 1, breathPeriod);
-        
+
         // Checks if the scale of the breath indicator is growing or shrinking.
         // Growing means we are breathing in.
         if (!(previousScale > scale) != BreathingIn)
@@ -74,7 +75,9 @@ public class Meditator : MonoBehaviour
             if (currentGracePeriod > 0 || Input.GetKey(inBreath))
             {
                 breathIndicatorMesh.material.color = Color.green;
-            } else {
+            }
+            else
+            {
                 HandleBreathFuckUp();
             }
         }
@@ -83,10 +86,13 @@ public class Meditator : MonoBehaviour
             if (currentGracePeriod > 0 || !Input.GetKey(inBreath))
             {
                 breathIndicatorMesh.material.color = Color.blue;
-            } else {
+            }
+            else
+            {
                 HandleBreathFuckUp();
             }
         }
+
         concentrationBar.transform.localScale = new Vector3(originalConcentrationBarScale * currentConcentration / MaxConcentration, 1, 1);
         currentGracePeriod -= 1;
     }
@@ -103,13 +109,20 @@ public class Meditator : MonoBehaviour
         StartCoroutine(StartFloating());
     }
 
+
     private IEnumerator StartFloating()
     {
         yield return new WaitForSeconds(3);
         if (!floatTweener.IsActive())
         {
-            floatTweener.Play();
+            ResetFloatTweener();
         }
+    }
+
+    private void ResetFloatTweener()
+    {
+        floatTweener = playerModel.DOMoveY(floatTarget.position.y, 1).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
+        floatTweener.OnKill(() => playerModel.DOMoveY(originalYPos, easeDuration).SetEase(ease));
     }
 
     private float Remap(float origFrom, float origTo, float targetFrom, float targetTo, float value)
