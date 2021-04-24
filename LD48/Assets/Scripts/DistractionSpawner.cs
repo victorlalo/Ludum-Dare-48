@@ -30,7 +30,7 @@ public class DistractionSpawner : MonoBehaviour
         {
             Vector3 unitSemiCircle = Random.onUnitSphere;
             unitSemiCircle = new Vector3(unitSemiCircle.x, Mathf.Abs(unitSemiCircle.y), 0);
-            
+
             var distraction = 
                 Instantiate(distractionPrefab, unitSemiCircle * radius + player.transform.position, Quaternion.identity).GetComponent<Distraction>();
             //Debug.Log(distraction.transform.position);
