@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class Distraction : MonoBehaviour
@@ -9,12 +10,25 @@ public class Distraction : MonoBehaviour
         set => speed = value;
     }
 
-    private float speed;
+    private float speed = 1f;
 
-    public Transform Player { get; set; }
-    
+    [SerializeField] public Transform Player;
+
     public string Text;
-    public string RemainingText;
+
+    public string RemainingText
+    {
+        get => remainingText;
+        set
+        {
+            DisplayText.text = value;
+            remainingText = value;
+        }
+    }
+
+    private string remainingText;
+
+    [SerializeField] private TMP_Text DisplayText;
 
     // Start is called before the first frame update
     void Start()
@@ -25,12 +39,17 @@ public class Distraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, Player.position, Speed);
-        if (!string.IsNullOrEmpty(Input.inputString) && RemainingText.StartsWith(Input.inputString, StringComparison.InvariantCultureIgnoreCase))
+        if (Player != null)
         {
-            RemainingText = RemainingText.Substring(RemainingText.IndexOf(Input.inputString, StringComparison.InvariantCultureIgnoreCase) + 1);
+            transform.position = Vector3.MoveTowards(transform.position, Player.position, Speed);
         }
-        
+        if (!string.IsNullOrEmpty(Input.inputString) &&
+            RemainingText.StartsWith(Input.inputString, StringComparison.InvariantCultureIgnoreCase))
+        {
+            RemainingText =
+                RemainingText.Substring(RemainingText.IndexOf(Input.inputString, StringComparison.InvariantCultureIgnoreCase) + 1);
+        }
+
         if (RemainingText.Length == 0)
         {
             SelfDestruct();
