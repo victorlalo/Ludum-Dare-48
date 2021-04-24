@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4274522862145498774}
+  - component: {fileID: -8977810199927634587}
+  - component: {fileID: -4012001861955347132}
   m_Layer: 0
   m_Name: Thought Bubble 2
   m_TagString: Untagged
@@ -31,6 +33,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-8977810199927634587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836947314406158469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac89775755294142a7c0efbf8787d0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Text: asdasd
+  RemainingText: 
+--- !u!65 &-4012001861955347132
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836947314406158469}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.001093, y: 2.5743039, z: 1}
+  m_Center: {x: -0.21660048, y: 0.07090986, z: 0}
 --- !u!1 &4400070577746042115
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3816752130574744804}
+  - component: {fileID: 178693256077851093}
+  - component: {fileID: 7564519885413586906}
   m_Layer: 0
   m_Name: Soundwave
   m_TagString: Untagged
@@ -31,6 +33,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &178693256077851093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2165119191084518324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac89775755294142a7c0efbf8787d0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Text: asdasd
+  RemainingText: 
+--- !u!65 &7564519885413586906
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2165119191084518324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.653716, y: 2.561535, z: 1}
+  m_Center: {x: -3.5188785, y: 0.7807677, z: 0}
 --- !u!1001 &1676101908682899147
 PrefabInstance:
   m_ObjectHideFlags: 0

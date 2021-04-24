@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1371416923910973412}
+  - component: {fileID: -1134568362386088189}
+  - component: {fileID: -8490912846180318038}
   m_Layer: 0
   m_Name: Dollars
   m_TagString: Untagged
@@ -31,6 +33,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1134568362386088189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444080959445450303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac89775755294142a7c0efbf8787d0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Text: asdasd
+  RemainingText: 
+--- !u!65 &-8490912846180318038
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444080959445450303}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.4700723, y: 1, z: 1.8110511}
+  m_Center: {x: -0.21901941, y: 0, z: -0.40552592}
 --- !u!95 &8638375664407298066
 Animator:
   serializedVersion: 3
