@@ -15,12 +15,16 @@ public class Distraction : MonoBehaviour
     
     public string Text;
     public string RemainingText;
-    
+
+    [SerializeField] GameObject[] icons;
     
     // Start is called before the first frame update
     void Start()
     {
         RemainingText = Text;
+
+        int iconNum = UnityEngine.Random.Range(0,icons.Length);
+        Instantiate(icons[iconNum], transform.position, Quaternion.identity, transform);
     }
 
     // Update is called once per frame
