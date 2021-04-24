@@ -1,3 +1,5 @@
+using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 public class Meditator : MonoBehaviour
@@ -12,7 +14,11 @@ public class Meditator : MonoBehaviour
     [SerializeField] private MeshRenderer concentrationBar;
     private float originalConcentrationBarScale;
 
-    private KeyCode inBreath = KeyCode.Space;
+    [SerializeField] private Transform playerModel;
+    [SerializeField] private Transform floatTarget;
+    private Tweener floatTweener;
+
+    private KeyCode inBreath = KeyCode.Mouse0;
 
     private int MaxGracePeriodFrames = 60 * 4;
     private int currentGracePeriod;
@@ -38,6 +44,13 @@ public class Meditator : MonoBehaviour
         currentConcentration = MaxConcentration;
         originalBreathIndicatorColor = breathIndicatorMesh.material.color;
         originalConcentrationBarScale = concentrationBar.transform.localScale.x;
+
+
+        var originalYPos = playerModel.position.y;
+        floatTweener = playerModel.DOMoveY(floatTarget.position.y, 1).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
+        floatTweener.Pause();
+        floatTweener.OnKill(() => playerModel.DOMoveY(originalYPos, 0.2f).SetEase(Ease.InOutCubic));
+        StartCoroutine(StartFloating());
     }
 
     // Update is called once per frame
@@ -80,10 +93,22 @@ public class Meditator : MonoBehaviour
 
     private void HandleBreathFuckUp()
     {
+        floatTweener.Kill();
         breathIndicatorMesh.material.color = originalBreathIndicatorColor;
         if (currentGracePeriod <= 0)
         {
             currentConcentration -= concentrationLossRate;
+        }
+
+        StartCoroutine(StartFloating());
+    }
+
+    private IEnumerator StartFloating()
+    {
+        yield return new WaitForSeconds(3);
+        if (!floatTweener.IsActive())
+        {
+            floatTweener.Play();
         }
     }
 
