@@ -46,6 +46,7 @@ public class Transitions : MonoBehaviour
     public void HouseTransition()
     {
         house.GetComponent<Animator>().SetTrigger("Break");
+        space.GetComponent<ObjectSpawner>().spawning = true;
     }
 
     public void TrippyTransition()
