@@ -8,6 +8,8 @@ public class Tutorial : MonoBehaviour
 {
     [SerializeField] private TMP_Text TutorialText;
     [SerializeField] private GameObject Player;
+    [SerializeField] private DistractionSpawner Spawner;
+    [SerializeField] private Timer Timer;
 
     private int currentMessage;
     private int perfectBreaths;
@@ -27,8 +29,8 @@ public class Tutorial : MonoBehaviour
             ("When the focus indicator shrinks, release the space bar to exhale.", 0, null),
             ("Try three perfect breaths now.", 0, WaitForPerfectBreaths),
             ("Good job!", 0, null),
-            ("Press the left and right arrow keys to rotate.", 0, null),
-            ("Don't get distracted!", 0, null)
+            ("Press the left and right arrow keys to aim your breath.", 0, null),
+            ("Don't get distracted!", 0, StartGame)
         };
 
         Meditator.PerfectBreath += () => perfectBreaths++;
@@ -57,6 +59,7 @@ public class Tutorial : MonoBehaviour
             yield return new WaitForSeconds(4);
             TutorialText.DOColor(Color.clear, 1f);
         }
+        TutorialText.DOColor(Color.clear, 1f);
     }
 
     private bool ShowPlayer()
@@ -73,5 +76,12 @@ public class Tutorial : MonoBehaviour
             waitingForBreaths = true;
         }
         return perfectBreaths >= 3;
+    }
+
+    private bool StartGame()
+    {
+        Timer.Enabled = true;
+        Spawner.StartSpawning();
+        return true;
     }
 }
