@@ -166,7 +166,7 @@ public class Meditator : MonoBehaviour
     {
         model1.transform.DOScale(0, 3f);
         model2.SetActive(true);
-        model2.transform.DOScale(1.5f, 3f);
+        model2.transform.DOScale(1.3f, 3f);
     }
 
 

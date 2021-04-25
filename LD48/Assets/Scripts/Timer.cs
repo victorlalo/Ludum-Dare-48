@@ -24,11 +24,11 @@ public class Timer : MonoBehaviour
     int transitionCount = 0;
     Transitions transitions;
 
-    float firstTransitionTime = 60f;
-    float secondTransitionTime = 120f;
-    float thirdTransitionTime = 150f;
-    float fourthTransitionTime = 180f;
-    float fifthTransitionTime = 210f;
+    float firstTransitionTime = 15f;
+    float secondTransitionTime = 20f;
+    float thirdTransitionTime = 30f;
+    float fourthTransitionTime = 50f;
+    float fifthTransitionTime = 80f;
     
 
     // Start is called before the first frame update

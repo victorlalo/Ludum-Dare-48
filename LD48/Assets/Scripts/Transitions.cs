@@ -39,7 +39,7 @@ public class Transitions : MonoBehaviour
         //HouseTransition();
         //StartCoroutine(FadeInTrippy());
         //NirvannaTransition();
-        SwapPlayerModels();
+        //SwapPlayerModels();
         //FadePlayer();
     }
 

@@ -26,6 +26,7 @@ public class ObjectSpawner : MonoBehaviour
             var yForce = yPos > 0 ? Random.Range(-1f, -0.5f) : Random.Range(0.5f, 1f);
             
             var spaceObject = Instantiate(spaceObjectPrefab, screenPosition, Quaternion.identity);
+            spaceObject.transform.localScale *= .45f;
             spaceObject.GetComponent<SpaceObject>().XForce = xForce;
             spaceObject.GetComponent<SpaceObject>().YForce = yForce;
             

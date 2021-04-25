@@ -3,10 +3,12 @@ using System.Collections;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
     [SerializeField] private TMP_Text TutorialText;
+    [SerializeField] private Image backdrop;
     [SerializeField] private GameObject Player;
     [SerializeField] private DistractionSpawner Spawner;
     [SerializeField] private Timer Timer;
@@ -22,15 +24,15 @@ public class Tutorial : MonoBehaviour
         
         TutorialSteps = new (string message, float waitTime, Func<bool> action)[]
         {
-            ("Welcome to Deep Breathing.", 0f, null), 
-            ("You will experience some deep meditation.", 0f, null), 
-            ("Say hi to you.", 2f, ShowPlayer),
-            ("When the focus indicator grows, hold the space bar to breathe in.", 0, null),
-            ("When the focus indicator shrinks, release the space bar to exhale.", 0, null),
-            ("Try three perfect breaths now.", 0, WaitForPerfectBreaths),
+            ("Welcome to Deep Breathing", 0f, null), 
+            ("You will experience\nDeeper and Deeper\nMeditation States", 0f, null), 
+            ("Say hi to you", 2f, ShowPlayer),
+            ("When the focus indicator grows, hold the space bar to breathe in", 0, null),
+            ("When the focus indicator shrinks, release the space bar to exhale", 0, null),
+            ("Try three perfect breaths now", 0, WaitForPerfectBreaths),
             ("Good job!", 0, null),
-            ("Press the left and right arrow keys to aim your breath.", 0, null),
-            ("Don't get distracted!", 0, StartGame)
+            ("Press the left and right arrow keys to aim your breath", 0, null),
+            ("Breathe out your Distractions", 0, StartGame)
         };
 
         Meditator.PerfectBreath += () => perfectBreaths++;
@@ -56,7 +58,7 @@ public class Tutorial : MonoBehaviour
                 continueToNextStep = currentStep.action?.Invoke() ?? true;
             } while (continueToNextStep == false);
 
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(4f);
             TutorialText.DOColor(Color.clear, 1f);
         }
         TutorialText.DOColor(Color.clear, 1f);
@@ -80,6 +82,7 @@ public class Tutorial : MonoBehaviour
 
     private bool StartGame()
     {
+        backdrop.DOFade(0, 1.5f);
         Timer.Enabled = true;
         Spawner.StartSpawning();
         return true;

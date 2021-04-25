@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TutorialText: {fileID: 0}
   Player: {fileID: 0}
+  Spawner: {fileID: 0}
+  Timer: {fileID: 0}

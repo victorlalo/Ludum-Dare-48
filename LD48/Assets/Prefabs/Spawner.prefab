@@ -58,10 +58,10 @@ MonoBehaviour:
   - {fileID: 9109230820226174156, guid: 92a000416cdddca45882a177ab0e95e0, type: 3}
   - {fileID: 8092698885887365552, guid: 1075c4007a4acfb4d9347ecb5816efa9, type: 3}
   player: {fileID: 0}
-  radius: 25
-  spawning: 1
-  spawnDelay: 3
-  distractionSpeed: 0.4
+  radius: 15.03
+  spawning: 0
+  spawnDelay: 4
+  distractionSpeed: 0.2
   iconScale: 1
 --- !u!114 &1060727653
 MonoBehaviour:
