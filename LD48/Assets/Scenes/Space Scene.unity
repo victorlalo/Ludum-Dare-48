@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.022952946, g: 0.0072104363, b: 0.010114686, a: 1}
+  m_IndirectSpecularColor: {r: 0.010126191, g: 0.003162228, b: 0.00460343, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -216,6 +216,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &1494868908 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7653355778337158652, guid: 47dd0f28487975f40811a71370c882ed, type: 3}
+  m_PrefabInstance: {fileID: 7653355776404021354}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5268844274219778076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -271,6 +276,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Space Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 5268844274221463563, guid: 35a5110f562499e4899e17ed23ff0d37, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 1494868908}
     - target: {fileID: 5268844274221463563, guid: 35a5110f562499e4899e17ed23ff0d37, type: 3}
       propertyPath: spawning
       value: 1

@@ -21,7 +21,10 @@ public class Distraction : MonoBehaviour
         get => remainingText;
         set
         {
-            DisplayText.text = value;
+            if (DisplayText != null)
+            {
+                DisplayText.text = value;
+            }
             remainingText = value;
         }
     }
