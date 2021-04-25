@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7699410750634735339
+--- !u!1 &2730971682267252590
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7699410750634735333}
-  - component: {fileID: 7699410750634735332}
+  - component: {fileID: 1303599056881870021}
+  - component: {fileID: 7919865476286624468}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7699410750634735333
+--- !u!4 &1303599056881870021
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7699410750634735339}
+  m_GameObject: {fileID: 2730971682267252590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.1405702, y: 6.1196976, z: -8.144709}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,21 +31,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7699410750634735332
+--- !u!114 &7919865476286624468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7699410750634735339}
+  m_GameObject: {fileID: 2730971682267252590}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76ead2b035b0c124fbf7f236dc64f9c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distractionPrefab: {fileID: 911721635330346498, guid: 26a42877039d9b14cb3f525bbd8a4393, type: 3}
+  distractionPrefabs:
+  - {fileID: 444080959445450303, guid: db824d7b6cbfd254987ec8dbc2525fa1, type: 3}
+  - {fileID: 7691048987116693534, guid: 4fed6b61f24c984468e3bfe21f447773, type: 3}
+  - {fileID: 2165119191084518324, guid: 56b2eb1b3b2ef694e9a992340ae8e922, type: 3}
+  - {fileID: 5824114846732614397, guid: e06042bd0133fbd429003e2645de907d, type: 3}
+  - {fileID: 4313214798810106079, guid: a38047fa05e9cff449bc29c3cefbc893, type: 3}
+  - {fileID: 837319652650244673, guid: b8260b8ef54d3a54d8e226b33a0aa11c, type: 3}
+  - {fileID: 1836947314406158469, guid: bbe86cd5ecd292c448bbfa5e58117ea9, type: 3}
+  - {fileID: 3215832713432709189, guid: 85be47ec88e0fda4abd00f2c8fd85932, type: 3}
+  - {fileID: 7631010701425178895, guid: cfb9640dd477fec47b3a56d6dd6b7998, type: 3}
+  - {fileID: 901809424887957813, guid: 788a5954ee461bd42a25f388c4fdafcc, type: 3}
+  - {fileID: 9109230820226174156, guid: 92a000416cdddca45882a177ab0e95e0, type: 3}
   player: {fileID: 0}
   radius: 50
   spawning: 1
   spawnDelay: 2
-  distractionSpeed: 1.7
+  distractionSpeed: 1.4

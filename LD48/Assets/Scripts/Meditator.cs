@@ -49,7 +49,7 @@ public class Meditator : MonoBehaviour
     {
         currentConcentration = MaxConcentration;
         originalBreathIndicatorColor = breathIndicatorMesh.material.color;
-        originalConcentrationBarScale = concentrationBar.transform.localScale.x;
+        //originalConcentrationBarScale = concentrationBar.transform.localScale.x;
         
         originalYPos = playerModel.position.y;
         StartCoroutine(StartFloating());
@@ -104,7 +104,7 @@ public class Meditator : MonoBehaviour
             }
         }
 
-        concentrationBar.transform.localScale = new Vector3(originalConcentrationBarScale * currentConcentration / MaxConcentration, 1, 1);
+        //concentrationBar.transform.localScale = new Vector3(originalConcentrationBarScale * currentConcentration / MaxConcentration, 1, 1);
         currentGracePeriod -= 1;
     }
 

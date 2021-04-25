@@ -12,6 +12,8 @@ public class DistractionSpawner : MonoBehaviour
     [Range(0, 30)]
     [SerializeField] private float distractionSpeed = 5f;
 
+    [SerializeField] float iconScale;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,8 @@ public class DistractionSpawner : MonoBehaviour
 
             var distractionGameObject =
                 Instantiate(distractionPrefabs[Random.Range(0, distractionPrefabs.Length)], unitSemiCircle * radius + player.transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
+
+            distractionGameObject.transform.localScale *= iconScale;
 
             var distraction = distractionGameObject.GetComponent<Distraction>();
             // distractionGameObject.transform.Rotate(distraction.transform.up, 90);
