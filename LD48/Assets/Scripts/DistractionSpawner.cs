@@ -8,7 +8,7 @@ public class DistractionSpawner : MonoBehaviour
     [SerializeField] GameObject[] distractionPrefabs;
     [SerializeField] private GameObject player;
     [SerializeField] private float radius = 50;
-    [SerializeField] private bool spawning = true;
+    [SerializeField] private bool spawning;
     [SerializeField] private float spawnDelay = 5f;
 
     [Range(0, 30)]
@@ -20,18 +20,6 @@ public class DistractionSpawner : MonoBehaviour
     
     public delegate void StopSpawningEventHandler();
     public static event StopSpawningEventHandler OnStopSpawning;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        StartCoroutine(SpawnDistraction());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     private IEnumerator SpawnDistraction()
     {
         while (spawning)
@@ -56,6 +44,12 @@ public class DistractionSpawner : MonoBehaviour
         }
     }
 
+    public void StartSpawning()
+    {
+        spawning = true;
+        StartCoroutine(SpawnDistraction());
+    }
+    
     public void StopSpawning()
     {
         spawning = false;
