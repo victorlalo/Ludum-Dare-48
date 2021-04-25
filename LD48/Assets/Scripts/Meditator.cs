@@ -24,6 +24,9 @@ public class Meditator : MonoBehaviour
 
     [SerializeField] private float rotationSpeed = 20f;
     
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform projectileLaunchPoint;
+    
     private KeyCode inBreath = KeyCode.Space;
 
     private int MaxGracePeriodFrames = 60 * 4;
@@ -77,6 +80,10 @@ public class Meditator : MonoBehaviour
         // Growing means we are breathing in.
         if (!(previousScale > scale) != BreathingIn)
         {
+            if (BreathingIn && Input.GetKey(inBreath))
+            {
+                Instantiate(projectilePrefab, projectileLaunchPoint.position, transform.rotation);
+            }
             BreathingIn = !BreathingIn;
         }
 
