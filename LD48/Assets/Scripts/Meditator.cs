@@ -93,6 +93,7 @@ public class Meditator : MonoBehaviour
             if (currentGracePeriod > 0 || Input.GetKey(inBreath))
             {
                 breathIndicatorMesh.material.color = Color.green;
+                breathIndicatorMesh.material.SetColor("_EmissionColor", Color.green);
             }
             else
             {
@@ -104,6 +105,7 @@ public class Meditator : MonoBehaviour
             if (currentGracePeriod > 0 || !Input.GetKey(inBreath))
             {
                 breathIndicatorMesh.material.color = Color.blue;
+                breathIndicatorMesh.material.SetColor("_EmissionColor", Color.blue);
             }
             else
             {
@@ -118,7 +120,8 @@ public class Meditator : MonoBehaviour
     private void HandleBreathFuckUp()
     {
         floatTweener.Kill();
-        breathIndicatorMesh.material.color = originalBreathIndicatorColor;
+        breathIndicatorMesh.material.color = Color.red;
+        breathIndicatorMesh.material.SetColor("_EmissionColor", Color.red);
         if (currentGracePeriod <= 0)
         {
             currentConcentration -= concentrationLossRate;

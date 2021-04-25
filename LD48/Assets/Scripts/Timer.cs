@@ -23,7 +23,7 @@ public class Timer : MonoBehaviour
         // TimeText.text = (Time.time - StartTime).ToString();
         var ts = TimeSpan.FromSeconds(Time.time - StartTime);
         CurrTime = Time.time - StartTime;
-        TimeText.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
+        //TimeText.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
     }
 
     
