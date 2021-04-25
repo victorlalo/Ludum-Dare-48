@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9103564580025538273}
   - component: {fileID: 9103564580025538272}
+  - component: {fileID: 1001455931}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -44,3 +45,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeText: {fileID: 0}
+--- !u!114 &1001455931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9103564580025538275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da2947cab8c08c3468c92aeaed1b1f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  house: {fileID: 0}
+  space: {fileID: 0}
+  trippy: {fileID: 0}
+  nirvanna: {fileID: 0}
+  frontFade: {fileID: 0}
+  player: {fileID: 0}
+  spawner: {fileID: 0}
+  fadeSpeed: 0.1
+  doneWithTrippyFade: 0

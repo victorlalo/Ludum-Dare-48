@@ -20,13 +20,11 @@ public class Projectile : MonoBehaviour
         //transform.Translate(transform.up * (speed * Time.deltaTime));
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.GetComponent<Distraction>() != null)
         {
             Destroy(collision.gameObject);
-            
-
             // signal/event that distraction was destroyed
         }
     }
