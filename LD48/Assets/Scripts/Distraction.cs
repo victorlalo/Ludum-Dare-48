@@ -62,6 +62,9 @@ public class Distraction : MonoBehaviour
 
     public void SelfDestruct()
     {
-        Destroy(gameObject);
+        if (gameObject != null)
+        {
+            Destroy(gameObject);
+        }
     }
 }
