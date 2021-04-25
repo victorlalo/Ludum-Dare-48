@@ -25,14 +25,14 @@ public class Tutorial : MonoBehaviour
         TutorialSteps = new (string message, float waitTime, Func<bool> action)[]
         {
             ("Welcome to Deep Breathing", 0f, null), 
-            ("You will experience\nDeeper and Deeper\nMeditation States", 0f, null), 
+            ("You will experience\ndeeper and deeper\nmeditation states", 0f, null), 
             ("Say hi to you", 2f, ShowPlayer),
             ("When the focus indicator grows, hold the space bar to breathe in", 0, null),
             ("When the focus indicator shrinks, release the space bar to exhale", 0, null),
             ("Try three perfect breaths now", 0, WaitForPerfectBreaths),
             ("Good job!", 0, null),
             ("Press the left and right arrow keys to aim your breath", 0, null),
-            ("Breathe out your Distractions", 0, StartGame)
+            ("Acknowledge distractions with a breath.", 0, StartGame)
         };
 
         Meditator.PerfectBreath += () => perfectBreaths++;

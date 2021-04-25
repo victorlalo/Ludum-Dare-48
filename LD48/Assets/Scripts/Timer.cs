@@ -24,17 +24,22 @@ public class Timer : MonoBehaviour
     int transitionCount = 0;
     Transitions transitions;
 
-    float firstTransitionTime = 15f;
-    float secondTransitionTime = 20f;
-    float thirdTransitionTime = 30f;
-    float fourthTransitionTime = 50f;
-    float fifthTransitionTime = 80f;
+    private float firstTransitionTime;
+    private float secondTransitionTime;
+    private float thirdTransitionTime;
+    private float fourthTransitionTime;
+    private float fifthTransitionTime;
     
 
     // Start is called before the first frame update
     void Start()
     {
         transitions = GetComponent<Transitions>();
+        firstTransitionTime = 45f;
+        secondTransitionTime = 20f + firstTransitionTime;
+        thirdTransitionTime = 30f + secondTransitionTime;
+        fourthTransitionTime = 50f + thirdTransitionTime;
+        fifthTransitionTime = 80f + fourthTransitionTime;
     }
 
     // Update is called once per frame
@@ -45,8 +50,6 @@ public class Timer : MonoBehaviour
             return;
         }
         
-        // TimeText.text = (Time.time - StartTime).ToString();
-        var ts = TimeSpan.FromSeconds(Time.time - StartTime);
         CurrTime = Time.time - StartTime;
 
         if (CurrTime > firstTransitionTime && transitionCount == 0)

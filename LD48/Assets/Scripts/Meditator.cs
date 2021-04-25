@@ -49,7 +49,7 @@ public class Meditator : MonoBehaviour
     
     private KeyCode inBreath = KeyCode.Space;
 
-    private int MaxGracePeriodFrames = 60 * 4;
+    private int MaxGracePeriodFrames = 60 * 6;
     private int currentGracePeriod;
 
     private bool BreathingIn
