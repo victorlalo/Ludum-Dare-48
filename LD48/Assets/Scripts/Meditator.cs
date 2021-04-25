@@ -27,6 +27,21 @@ public class Meditator : MonoBehaviour
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private GameObject projectileLaunchPoint;
     [SerializeField] private GameObject arrowPivotPoint;
+
+    [SerializeField] private GameObject model1;
+    [SerializeField] private GameObject model2;
+
+    [SerializeField] private Color inhaleColor;
+    [ColorUsage(true, true)]
+    [SerializeField] private Color inhaleColorEmission;
+
+    [SerializeField] private Color exhaleColor;
+    [ColorUsage(true, true)]
+    [SerializeField] private Color exhaleColorEmission;
+
+    [ColorUsage(true, true)]
+    [SerializeField] private Color fuckUpBreathColor;
+
     
     private KeyCode inBreath = KeyCode.Space;
 
@@ -56,6 +71,10 @@ public class Meditator : MonoBehaviour
         //originalConcentrationBarScale = concentrationBar.transform.localScale.x;
         
         originalYPos = playerModel.position.y;
+
+        model1.SetActive(true);
+        model2.transform.localScale = Vector3.zero;
+        model2.SetActive(false);
         StartCoroutine(StartFloating());
     }
 
@@ -93,8 +112,8 @@ public class Meditator : MonoBehaviour
         {
             if (currentGracePeriod > 0 || Input.GetKey(inBreath))
             {
-                breathIndicatorMesh.material.color = Color.green;
-                breathIndicatorMesh.material.SetColor("_EmissionColor", Color.green);
+                breathIndicatorMesh.material.color = inhaleColor;
+                breathIndicatorMesh.material.SetColor("_EmissionColor", inhaleColorEmission);
             }
             else
             {
@@ -105,8 +124,8 @@ public class Meditator : MonoBehaviour
         {
             if (currentGracePeriod > 0 || !Input.GetKey(inBreath))
             {
-                breathIndicatorMesh.material.color = Color.blue;
-                breathIndicatorMesh.material.SetColor("_EmissionColor", Color.blue);
+                breathIndicatorMesh.material.color = exhaleColor;
+                breathIndicatorMesh.material.SetColor("_EmissionColor", exhaleColorEmission);
             }
             else
             {
@@ -121,14 +140,21 @@ public class Meditator : MonoBehaviour
     private void HandleBreathFuckUp()
     {
         floatTweener.Kill();
-        breathIndicatorMesh.material.color = Color.red;
-        breathIndicatorMesh.material.SetColor("_EmissionColor", Color.red);
+        breathIndicatorMesh.material.color = fuckUpBreathColor;
+        breathIndicatorMesh.material.SetColor("_EmissionColor", fuckUpBreathColor);
         if (currentGracePeriod <= 0)
         {
             currentConcentration -= concentrationLossRate;
         }
 
         StartCoroutine(StartFloating());
+    }
+
+    public void SwapModels()
+    {
+        model1.transform.DOScale(0, 3f);
+        model2.SetActive(true);
+        model2.transform.DOScale(2f, 3f);
     }
 
 

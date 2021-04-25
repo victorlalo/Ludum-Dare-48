@@ -12,6 +12,7 @@ public class Transitions : MonoBehaviour
     [SerializeField] GameObject nirvanna;
     [SerializeField] GameObject frontFade;
     [SerializeField] GameObject player;
+    [SerializeField] DistractionSpawner spawner;
 
     [SerializeField] float fadeSpeed;
 
@@ -30,10 +31,16 @@ public class Transitions : MonoBehaviour
         c2.a = 0;
         frontFade.GetComponent<MeshRenderer>().material.SetColor("_Color", c);
 
+
+        //trippy.SetActive(false);
+        //nirvanna.SetActive(false);
+        //frontFade.SetActive(false);
+
         //HouseTransition();
         //StartCoroutine(FadeInTrippy());
         //NirvannaTransition();
-        FadePlayer();
+        //SwapPlayerModels();
+        //FadePlayer();
     }
 
     public void HouseTransition()
@@ -44,19 +51,26 @@ public class Transitions : MonoBehaviour
     public void TrippyTransition()
     {
         // Fade in Trippy Video Animation
+        //trippy.SetActive(true);
         StartCoroutine(FadeInTrippy());
     }
 
     public void NirvannaTransition()
     {
         // Fade in white background
+        //spawner.DestroyAllModels();
         nirvanna.GetComponent<MeshRenderer>().material.DOFade(1, 5);
+    }
+
+    public void SwapPlayerModels()
+    {
+        player.GetComponent<Meditator>().SwapModels();
     }
 
     public void FadePlayer()
     {
-        player.transform.DOMoveZ(20, 20);
-        frontFade.GetComponent<MeshRenderer>().material.DOFade(1, 5);
+        player.transform.DOMoveZ(20, 8);
+        frontFade.GetComponent<MeshRenderer>().material.DOFade(1, 5);//.OnComplete(GoToEndScreen());
     }
 
     IEnumerator FadeInTrippy()
@@ -70,4 +84,5 @@ public class Transitions : MonoBehaviour
         }
         doneWithTrippyFade = true;
     }
+
 }
