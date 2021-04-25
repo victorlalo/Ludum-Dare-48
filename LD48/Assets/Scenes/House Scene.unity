@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.030118534, g: 0.009174706, b: 0.012596238, a: 1}
+  m_IndirectSpecularColor: {r: 0.047404103, g: 0.036585078, b: 0.039368104, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -2170,6 +2170,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: dcb39fe052052394f892a7353523abe3, type: 3}
   m_PrefabInstance: {fileID: 2142173654}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1001455930 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9103564580025538275, guid: 0b2be8cc237fca340bc6d1345eeacea4, type: 3}
+  m_PrefabInstance: {fileID: 1951103303}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1001455931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001455930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da2947cab8c08c3468c92aeaed1b1f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  house: {fileID: 1758359774}
+  space: {fileID: 0}
+  trippy: {fileID: 1049591307}
+  nirvanna: {fileID: 1047618359}
+  player: {fileID: 0}
+  fadeSpeed: 0.1
+  doneWithTrippyFade: 0
 --- !u!4 &1028401831 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0fa00c3c197accb43acda76891213afa, type: 3}
@@ -2242,7 +2266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &1047618360
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2320,6 +2344,72 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -74.977, y: 0, z: 0}
+--- !u!1 &1049591307
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1049591309}
+  - component: {fileID: 1049591308}
+  m_Layer: 0
+  m_Name: Trippy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!328 &1049591308
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049591307}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: fd750b8efe21db54c8f6222a870d7c83, type: 3}
+  m_TargetCameraAlpha: 0
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 72741725}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: _MainTex
+  m_RenderMode: 0
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 0
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 1
+  m_WaitForFirstFrame: 0
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
+--- !u!4 &1049591309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049591307}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.069999695, y: -1.8400002, z: 9.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1058388401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2327,6 +2417,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 383703242, guid: 0b0ea72f3ab657940af4ecefa57a81e7, type: 3}
+      propertyPath: arrowPivotPoint
+      value: 
+      objectReference: {fileID: 285631845}
+    - target: {fileID: 383703242, guid: 0b0ea72f3ab657940af4ecefa57a81e7, type: 3}
+      propertyPath: projectileLaunchPoint
+      value: 
+      objectReference: {fileID: 1618089256}
     - target: {fileID: 7900273093061997006, guid: 0b0ea72f3ab657940af4ecefa57a81e7, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3594,7 +3692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1758359775
 Transform:
   m_ObjectHideFlags: 0
@@ -3933,7 +4031,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9103564580025538272, guid: 0b2be8cc237fca340bc6d1345eeacea4, type: 3}
   m_PrefabInstance: {fileID: 1951103303}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1001455930}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 793f4a0ed4e2d984e840c4092efbea83, type: 3}

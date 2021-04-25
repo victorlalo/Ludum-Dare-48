@@ -25,7 +25,8 @@ public class Meditator : MonoBehaviour
     [SerializeField] private float rotationSpeed = 20f;
     
     [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private Transform projectileLaunchPoint;
+    [SerializeField] private GameObject projectileLaunchPoint;
+    [SerializeField] private GameObject arrowPivotPoint;
     
     private KeyCode inBreath = KeyCode.Space;
 
@@ -63,12 +64,12 @@ public class Meditator : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Rotate(Vector3.forward, Time.deltaTime * rotationSpeed);
+            arrowPivotPoint.transform.Rotate(Vector3.forward, Time.deltaTime * rotationSpeed);
         }
         
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Rotate(Vector3.forward, Time.deltaTime * -rotationSpeed);
+            arrowPivotPoint.transform.Rotate(Vector3.forward, Time.deltaTime * -rotationSpeed);
         }
         
         breathPeriod = Mathf.Cos(Time.time * breathSpeed / Mathf.PI);
@@ -82,7 +83,7 @@ public class Meditator : MonoBehaviour
         {
             if (BreathingIn && Input.GetKey(inBreath))
             {
-                Instantiate(projectilePrefab, projectileLaunchPoint.position, projectileLaunchPoint.transform.rotation);
+                Instantiate(projectilePrefab, projectileLaunchPoint.transform.position, projectileLaunchPoint.transform.rotation);
             }
             BreathingIn = !BreathingIn;
         }
