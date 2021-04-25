@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class DistractionSpawner : MonoBehaviour
@@ -43,7 +44,7 @@ public class DistractionSpawner : MonoBehaviour
             //Debug.Log(distraction.transform.position);
             distraction.Player = player.transform;
             distraction.Speed = distractionSpeed;
-            distraction.Text = "placeholder";
+            distraction.Text = Thoughts.GetRandomThought();
             yield return new WaitForSeconds(spawnDelay);
         }
     }

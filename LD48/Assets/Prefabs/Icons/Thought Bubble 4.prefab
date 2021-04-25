@@ -26,7 +26,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14379097673231361}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000031292436}
-  m_LocalPosition: {x: 0, y: 0, z: 1.4000001}
+  m_LocalPosition: {x: 0, y: 0, z: 0.87}
   m_LocalScale: {x: 0.22456999, y: 0.22456999, z: 0.22456999}
   m_Children: []
   m_Father: {fileID: 2713429710419786352}
@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.3671224, y: -0.17}
+  m_AnchoredPosition: {x: -0.79, y: 0.13}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &6524013533875629066
@@ -56,7 +56,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7908594889795386400, guid: dc7ecb092a2503b43a159ba7b65c595c, type: 2}
+  - {fileID: 5258767378084383008, guid: 9efe66cb563cd844ead67d7cb51e4045, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,10 +98,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sample text
+  m_text: Now that I think about it, James Cameron's Avatar was pretty dope
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc7ecb092a2503b43a159ba7b65c595c, type: 2}
-  m_sharedMaterial: {fileID: 7908594889795386400, guid: dc7ecb092a2503b43a159ba7b65c595c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9efe66cb563cd844ead67d7cb51e4045, type: 2}
+  m_sharedMaterial: {fileID: 5258767378084383008, guid: 9efe66cb563cd844ead67d7cb51e4045, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -125,15 +125,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 4.2463512, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

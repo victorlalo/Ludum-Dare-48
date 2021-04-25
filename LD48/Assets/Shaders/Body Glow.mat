@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Glowing Inner
+  m_Name: Body Glow
   m_Shader: {fileID: -6465566751694194690, guid: af0bfc933417f544fa72c08574821166, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 2
