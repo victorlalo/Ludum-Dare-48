@@ -82,7 +82,7 @@ public class Meditator : MonoBehaviour
         {
             if (BreathingIn && Input.GetKey(inBreath))
             {
-                Instantiate(projectilePrefab, projectileLaunchPoint.position, transform.rotation);
+                Instantiate(projectilePrefab, projectileLaunchPoint.position, projectileLaunchPoint.transform.rotation);
             }
             BreathingIn = !BreathingIn;
         }
