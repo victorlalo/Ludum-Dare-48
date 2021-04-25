@@ -20,9 +20,16 @@ public class ObjectSpawner : MonoBehaviour
         {
             var xPos = CoinFlip() ? Random.Range(-100, -1) : Random.Range(Screen.width + 1, Screen.width + 100);
             var yPos = CoinFlip() ? Random.Range(-100, -1) : Random.Range(Screen.height + 1, Screen.height + 100);
-            Vector3 screenPosition = camera.ScreenToWorldPoint(new Vector3(xPos, yPos, camera.farClipPlane/2));
+            Vector3 screenPosition = camera.ScreenToWorldPoint(new Vector3(xPos, yPos, camera.farClipPlane));
             
-            Instantiate(spaceObjectPrefab, screenPosition, Quaternion.identity);
+            var xForce = xPos > 0 ? Random.Range(-1f, -0.5f) : Random.Range(0.5f, 1f);
+            var yForce = yPos > 0 ? Random.Range(-1f, -0.5f) : Random.Range(0.5f, 1f);
+            
+            var spaceObject = Instantiate(spaceObjectPrefab, screenPosition, Quaternion.identity);
+            spaceObject.GetComponent<SpaceObject>().XForce = xForce;
+            spaceObject.GetComponent<SpaceObject>().YForce = yForce;
+            
+            
             yield return new WaitForSeconds(spawnDelay);
         }
     }

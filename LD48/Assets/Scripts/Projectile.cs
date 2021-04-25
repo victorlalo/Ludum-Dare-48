@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         rigidbody.AddForce(transform.up * speed, ForceMode.Impulse);
+        Destroy(gameObject, 30f);
         
     }
 
@@ -24,7 +25,7 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.GetComponent<Distraction>() != null)
         {
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+            
 
             // signal/event that distraction was destroyed
         }

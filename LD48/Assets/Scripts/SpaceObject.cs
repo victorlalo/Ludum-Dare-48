@@ -8,6 +8,9 @@ public class SpaceObject : MonoBehaviour
     [SerializeField] float rotSpeed;
     [SerializeField] float force;
     Rigidbody rb;
+    
+    public float XForce { get; set; }
+    public float YForce { get; set; }
 
     void Start()
     {
@@ -16,7 +19,10 @@ public class SpaceObject : MonoBehaviour
         int itemNum = Random.Range(0, spaceObjects.Length);
         Instantiate(spaceObjects[itemNum], transform.position, Random.rotation, transform);
 
-        rb.AddForce(Random.Range(-1f, 1f) * force, Random.Range(-1f, 1f) * force, Random.Range(-1f, 1f) * force, ForceMode.Impulse);
+        // var xForce = transform.position.x > 0 ? Random.Range(-1f, -0.5f) : Random.Range(0.5f, 1f);
+        // var yForce = transform.position.y < 0 ? Random.Range(-1f, -0.5f) : Random.Range(0.5f, 1f);
+        
+        rb.AddForce(XForce * force, YForce * force, Random.Range(-1f, 1f) * force, ForceMode.Impulse);
     }
 
     void Update()
