@@ -59,8 +59,8 @@ public class Transitions : MonoBehaviour
     public void NirvannaTransition()
     {
         // Fade in white background
-        //spawner.DestroyAllModels();
         nirvanna.GetComponent<MeshRenderer>().material.DOFade(1, 5);
+        spawner.StopSpawning();
     }
 
     public void SwapPlayerModels()

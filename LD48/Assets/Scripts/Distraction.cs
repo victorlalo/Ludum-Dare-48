@@ -37,6 +37,7 @@ public class Distraction : MonoBehaviour
     void Start()
     {
         RemainingText = Text;
+        DistractionSpawner.OnStopSpawning += SelfDestruct;
     }
 
     // Update is called once per frame
@@ -59,7 +60,7 @@ public class Distraction : MonoBehaviour
         }
     }
 
-    private void SelfDestruct()
+    public void SelfDestruct()
     {
         Destroy(gameObject);
     }

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -14,7 +15,11 @@ public class DistractionSpawner : MonoBehaviour
     [SerializeField] private float distractionSpeed = 5f;
 
     [SerializeField] float iconScale;
-
+    
+    private List<Distraction> spawnedDistractions = new List<Distraction>();
+    
+    public delegate void StopSpawningEventHandler();
+    public static event StopSpawningEventHandler OnStopSpawning;
 
     // Start is called before the first frame update
     void Start()
@@ -40,12 +45,20 @@ public class DistractionSpawner : MonoBehaviour
             distractionGameObject.transform.localScale *= iconScale;
 
             var distraction = distractionGameObject.GetComponent<Distraction>();
+            spawnedDistractions.Add(distraction);
             // distractionGameObject.transform.Rotate(distraction.transform.up, 90);
             //Debug.Log(distraction.transform.position);
             distraction.Player = player.transform;
             distraction.Speed = distractionSpeed;
             distraction.Text = Thoughts.GetRandomThought();
+            
             yield return new WaitForSeconds(spawnDelay);
         }
+    }
+
+    public void StopSpawning()
+    {
+        spawning = false;
+        OnStopSpawning?.Invoke();
     }
 }

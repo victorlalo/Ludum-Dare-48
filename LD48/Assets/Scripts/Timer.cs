@@ -60,8 +60,6 @@ public class Timer : MonoBehaviour
             transitions.FadePlayer();
             transitionCount++;
         }
-        
-        //TimeText.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
     }
 
     
