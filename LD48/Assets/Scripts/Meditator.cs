@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
@@ -27,6 +28,9 @@ public class Meditator : MonoBehaviour
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private GameObject projectileLaunchPoint;
     [SerializeField] private GameObject arrowPivotPoint;
+    
+    public delegate void PerfectBreathEventHandler();
+    public static event PerfectBreathEventHandler PerfectBreath;
     
     private KeyCode inBreath = KeyCode.Space;
 
@@ -81,9 +85,17 @@ public class Meditator : MonoBehaviour
         // Growing means we are breathing in.
         if (!(previousScale > scale) != BreathingIn)
         {
+            if (BreathingIn == Input.GetKey(inBreath))
+            {
+                PerfectBreath?.Invoke();
+            }
+            
             if (BreathingIn && Input.GetKey(inBreath))
             {
-                Instantiate(projectilePrefab, projectileLaunchPoint.transform.position, projectileLaunchPoint.transform.rotation);
+                if (projectilePrefab != null)
+                {
+                    Instantiate(projectilePrefab, projectileLaunchPoint.transform.position, projectileLaunchPoint.transform.rotation);
+                }
             }
             BreathingIn = !BreathingIn;
         }
