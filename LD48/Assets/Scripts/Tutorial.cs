@@ -42,13 +42,13 @@ public class Tutorial : MonoBehaviour
 
     private IEnumerator DisplayNextTutorialMessage()
     {
-        while (currentMessage < TutorialSteps.Length)
+        do
         {
             yield return new WaitForSeconds(2);
             TutorialText.DOColor(Color.black, 1f);
             var currentStep = TutorialSteps[currentMessage++];
             TutorialText.text = currentStep.message;
-            
+
             yield return new WaitForSeconds(currentStep.waitTime);
 
             bool continueToNextStep;
@@ -60,7 +60,7 @@ public class Tutorial : MonoBehaviour
 
             yield return new WaitForSeconds(4f);
             TutorialText.DOColor(Color.clear, 1f);
-        }
+        } while (currentMessage < TutorialSteps.Length);
         TutorialText.DOColor(Color.clear, 1f);
     }
 
