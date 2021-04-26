@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0064869574, g: 0.0020763602, b: 0.0031315312, a: 1}
+  m_IndirectSpecularColor: {r: 0.028989056, g: 0.008839522, b: 0.012164142, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -1239,6 +1239,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 815155537399352447, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.142702
+      objectReference: {fileID: 0}
+    - target: {fileID: 815155537399352447, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.02213
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
 --- !u!1001 &2586962034980851924
@@ -1305,6 +1313,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4616476572131833832, guid: c1c1ca119c5354a4ebcb64b892706b2b, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616476572131833832, guid: c1c1ca119c5354a4ebcb64b892706b2b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4616476572131833832, guid: c1c1ca119c5354a4ebcb64b892706b2b, type: 3}
       propertyPath: m_TargetCamera
       value: 

@@ -18,6 +18,7 @@ public class Transitions : MonoBehaviour
     [SerializeField] float fadeSpeed;
 
     public bool doneWithTrippyFade = false;
+    string videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, "Mandala.mp4");
 
 
     void Start()
@@ -33,7 +34,7 @@ public class Transitions : MonoBehaviour
         frontFade.GetComponent<MeshRenderer>().material.SetColor("_Color", c);
 
         //HouseTransition();
-        //StartCoroutine(FadeInTrippy());
+        StartCoroutine(FadeInTrippy());
         //NirvannaTransition();
         //SwapPlayerModels();
         //FadePlayer();
@@ -74,7 +75,9 @@ public class Transitions : MonoBehaviour
     IEnumerator FadeInTrippy()
     {
         var vid = trippy.GetComponent<VideoPlayer>();
-        while(vid.targetCameraAlpha < 1)
+        vid.url = videoPath;
+        vid.Play();
+        while (vid.targetCameraAlpha < 1)
         {
             //print(vid.targetCameraAlpha);
             vid.targetCameraAlpha += Time.deltaTime * fadeSpeed;
