@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.006068252, g: 0.0019488595, b: 0.0029294565, a: 1}
+  m_IndirectSpecularColor: {r: 0.029545024, g: 0.009007604, b: 0.012369636, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -314,7 +314,7 @@ PrefabInstance:
       objectReference: {fileID: 1393463712}
     - target: {fileID: 3732586716112197961, guid: 633faa4d585e5f84b9942da1d388aca1, type: 3}
       propertyPath: skipTutorial
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3732586716112197961, guid: 633faa4d585e5f84b9942da1d388aca1, type: 3}
       propertyPath: AudioMixController
@@ -555,10 +555,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 285631846, guid: 0b0ea72f3ab657940af4ecefa57a81e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 285631846, guid: 0b0ea72f3ab657940af4ecefa57a81e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 383703242, guid: 0b0ea72f3ab657940af4ecefa57a81e7, type: 3}
       propertyPath: mixer
       value: 
       objectReference: {fileID: 771570065}
+    - target: {fileID: 543450652141603708, guid: 0b0ea72f3ab657940af4ecefa57a81e7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 543450652141603708, guid: 0b0ea72f3ab657940af4ecefa57a81e7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 543450652141603708, guid: 0b0ea72f3ab657940af4ecefa57a81e7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 543450652141603708, guid: 0b0ea72f3ab657940af4ecefa57a81e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 543450652141603708, guid: 0b0ea72f3ab657940af4ecefa57a81e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.63
+      objectReference: {fileID: 0}
     - target: {fileID: 7900273093061997006, guid: 0b0ea72f3ab657940af4ecefa57a81e7, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -609,7 +637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7900273093061997007, guid: 0b0ea72f3ab657940af4ecefa57a81e7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b0ea72f3ab657940af4ecefa57a81e7, type: 3}
@@ -1092,6 +1120,10 @@ PrefabInstance:
     - target: {fileID: 815155536496981750, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
       propertyPath: m_Name
       value: House
+      objectReference: {fileID: 0}
+    - target: {fileID: 815155536496981750, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 815155536496981751, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
       propertyPath: m_RootOrder

@@ -46,7 +46,7 @@ public class Timer : MonoBehaviour
         secondTransitionTime = 30f + firstTransitionTime;
         thirdTransitionTime = 20f + secondTransitionTime;
         fourthTransitionTime = 22f + thirdTransitionTime;
-        fifthTransitionTime = 12f + fourthTransitionTime;
+        fifthTransitionTime = 5f + fourthTransitionTime;
     }
 
     // Update is called once per frame
