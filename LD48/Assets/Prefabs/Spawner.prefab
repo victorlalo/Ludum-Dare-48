@@ -47,7 +47,6 @@ MonoBehaviour:
   distractionPrefabs:
   - {fileID: 444080959445450303, guid: db824d7b6cbfd254987ec8dbc2525fa1, type: 3}
   - {fileID: 7691048987116693534, guid: 4fed6b61f24c984468e3bfe21f447773, type: 3}
-  - {fileID: 3704840758182476051, guid: 244ac2ec468e86e48896876e47c56b68, type: 3}
   - {fileID: 5824114846732614397, guid: e06042bd0133fbd429003e2645de907d, type: 3}
   - {fileID: 4313214798810106079, guid: a38047fa05e9cff449bc29c3cefbc893, type: 3}
   - {fileID: 837319652650244673, guid: b8260b8ef54d3a54d8e226b33a0aa11c, type: 3}
@@ -58,11 +57,13 @@ MonoBehaviour:
   - {fileID: 9109230820226174156, guid: 92a000416cdddca45882a177ab0e95e0, type: 3}
   - {fileID: 8092698885887365552, guid: 1075c4007a4acfb4d9347ecb5816efa9, type: 3}
   player: {fileID: 0}
-  radius: 15.03
+  radius: 2.8
   spawning: 0
-  spawnDelay: 4
+  spawnDelay: 4.5
   distractionSpeed: 0.2
   iconScale: 1
+  debugCube: {fileID: 0}
+  spawnOnAwake: 0
 --- !u!114 &1060727653
 MonoBehaviour:
   m_ObjectHideFlags: 0

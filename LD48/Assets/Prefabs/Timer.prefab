@@ -44,6 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 793f4a0ed4e2d984e840c4092efbea83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EndScreenText: {fileID: 0}
+  Backdrop: {fileID: 0}
+  backdropColor: {r: 0.85490197, g: 0.85882354, b: 0.6745098, a: 0.54901963}
+  mixer: {fileID: 0}
   TimeText: {fileID: 0}
 --- !u!114 &1001455931
 MonoBehaviour:

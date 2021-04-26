@@ -432,9 +432,9 @@ MonoBehaviour:
   mixer: {fileID: 24100000, guid: 77cd7e32b871548428f943f6a0c3fa0f, type: 2}
   fadeSpeed: 0.1
   sfxTrack: {fileID: 5998616407315594363}
-  bell: {fileID: 8300000, guid: 4a3e84bd3fcda6146b8e08e7cc077c95, type: 3}
-  inhale: {fileID: 8300000, guid: fadf016e3633398438eb261284795670, type: 3}
-  exhale: {fileID: 8300000, guid: 4046f5409ddd49c47acd9240986a9101, type: 3}
+  bell: {fileID: 8300000, guid: 3d00ed338d2a97742a96098392159d51, type: 3}
+  inhale: {fileID: 8300000, guid: 6cdaa38ef84f3ae47a5fa579f12082d7, type: 3}
+  exhale: {fileID: 8300000, guid: a9fea1e9e0d20aa43b818d0d871863f6, type: 3}
 --- !u!1 &5998616407596861931
 GameObject:
   m_ObjectHideFlags: 0

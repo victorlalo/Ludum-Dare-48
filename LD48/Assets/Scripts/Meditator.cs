@@ -43,6 +43,8 @@ public class Meditator : MonoBehaviour
     [ColorUsage(true, true)]
     [SerializeField] private Color fuckUpBreathColor;
 
+    [SerializeField] Animator anim;
+
     
     public delegate void PerfectBreathEventHandler();
     public static event PerfectBreathEventHandler PerfectBreath;
@@ -51,6 +53,8 @@ public class Meditator : MonoBehaviour
 
     private float MaxGracePeriodFrames = 0.5f;
     private float currentGracePeriod;
+
+    [SerializeField] AudioMixController mixer;
 
     private bool BreathingIn
     {
@@ -118,6 +122,15 @@ public class Meditator : MonoBehaviour
                 }
             }
             BreathingIn = !BreathingIn;
+            
+            if (BreathingIn)
+            {
+                mixer.PlayInhaleSFX();
+            }
+            else
+            {
+                mixer.PlayExhaleSFX();
+            }
         }
 
         breathIndicatorTransform.localScale = new Vector3(scale, scale, scale);
@@ -195,6 +208,7 @@ public class Meditator : MonoBehaviour
         }
         
         HandleBreathFuckUp();
+        anim.SetTrigger("Frown");
         Destroy(other.gameObject);
     }
 

@@ -6,7 +6,7 @@ public class Distraction : MonoBehaviour
 {
     public float Speed
     {
-        get => speed / 500f;
+        get => speed;
         set => speed = value;
     }
 
@@ -45,7 +45,7 @@ public class Distraction : MonoBehaviour
     {
         if (Player != null)
         {
-            transform.position = Vector3.MoveTowards(transform.position, Player.position, Speed);
+            transform.position = Vector3.MoveTowards(transform.position, Player.position, Speed *Time.deltaTime);
         }
         if (!string.IsNullOrEmpty(Input.inputString) &&
             RemainingText.StartsWith(Input.inputString, StringComparison.InvariantCultureIgnoreCase))

@@ -20,15 +20,34 @@ public class DistractionSpawner : MonoBehaviour
     
     public delegate void StopSpawningEventHandler();
     public static event StopSpawningEventHandler OnStopSpawning;
+
+    [SerializeField] GameObject debugCube;
+    public bool spawnOnAwake = false;
+
+    private void Awake()
+    {
+        if (spawnOnAwake){
+            StartSpawning();
+        }
+        
+    }
+
     private IEnumerator SpawnDistraction()
     {
         while (spawning)
         {
-            Vector3 unitSemiCircle = Random.onUnitSphere;
-            unitSemiCircle = new Vector3(unitSemiCircle.x, Mathf.Abs(unitSemiCircle.y), 0);
+            Vector3 unitSemiCircle = RandomCircle(transform.position, radius);
+            //unitSemiCircle = new Vector3(unitSemiCircle.x, Mathf.Abs(unitSemiCircle.y), 0);
+            if (unitSemiCircle.y < 0)
+            {
+                unitSemiCircle.y = -unitSemiCircle.y;
+            }
+            unitSemiCircle.z = 0;
 
             var distractionGameObject =
                 Instantiate(distractionPrefabs[Random.Range(0, distractionPrefabs.Length)], unitSemiCircle * radius + player.transform.position, Quaternion.Euler(new Vector3(0, 180, 0)), transform);
+
+            //Instantiate(debugCube, unitSemiCircle * radius, Quaternion.Euler(new Vector3(0, 180, 0)), transform);
 
             distractionGameObject.transform.localScale *= iconScale;
 
@@ -42,6 +61,16 @@ public class DistractionSpawner : MonoBehaviour
             
             yield return new WaitForSeconds(spawnDelay);
         }
+    }
+
+    Vector3 RandomCircle(Vector3 center, float radius)
+    {
+        float ang = Random.value * 360;
+        Vector3 pos;
+        pos.x = center.x + radius * Mathf.Sin(ang * Mathf.Deg2Rad);
+        pos.y = center.y + radius * Mathf.Cos(ang * Mathf.Deg2Rad);
+        pos.z = center.z;
+        return pos;
     }
 
     public void StartSpawning()

@@ -373,7 +373,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5258767378084383008, guid: 9efe66cb563cd844ead67d7cb51e4045, type: 2}
+  - {fileID: 8616819914130556949, guid: 33853459fe59711468c2b72094065964, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -417,8 +417,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Now that I think about it, James Cameron's Avatar was pretty dope
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9efe66cb563cd844ead67d7cb51e4045, type: 2}
-  m_sharedMaterial: {fileID: 5258767378084383008, guid: 9efe66cb563cd844ead67d7cb51e4045, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 33853459fe59711468c2b72094065964, type: 2}
+  m_sharedMaterial: {fileID: 8616819914130556949, guid: 33853459fe59711468c2b72094065964, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -442,8 +442,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
