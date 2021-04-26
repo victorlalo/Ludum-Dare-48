@@ -60,7 +60,7 @@ public class Meditator : MonoBehaviour
             breathingIn = value;
             currentGracePeriod = MaxGracePeriodFrames; 
         }
-    }
+    }                                                                                                    
 
     private bool breathingIn;
 
@@ -85,7 +85,7 @@ public class Meditator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print($"Current grace period = {currentGracePeriod}");
+
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             arrowPivotPoint.transform.Rotate(Vector3.forward, Time.deltaTime * rotationSpeed);
