@@ -68,5 +68,6 @@ MonoBehaviour:
   frontFade: {fileID: 0}
   player: {fileID: 0}
   spawner: {fileID: 0}
+  endCanvas: {fileID: 3898914210530579693, guid: 775be9a6f0c65044fa41eb9331261671, type: 3}
   fadeSpeed: 0.1
   doneWithTrippyFade: 0

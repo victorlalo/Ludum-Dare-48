@@ -13,6 +13,7 @@ public class Transitions : MonoBehaviour
     [SerializeField] GameObject frontFade;
     [SerializeField] GameObject player;
     [SerializeField] DistractionSpawner spawner;
+    [SerializeField] GameObject endCanvas;
 
     [SerializeField] float fadeSpeed;
 
@@ -30,11 +31,6 @@ public class Transitions : MonoBehaviour
         Color32 c2 = frontFade.GetComponent<MeshRenderer>().material.color;
         c2.a = 0;
         frontFade.GetComponent<MeshRenderer>().material.SetColor("_Color", c);
-
-
-        //trippy.SetActive(false);
-        //nirvanna.SetActive(false);
-        //frontFade.SetActive(false);
 
         //HouseTransition();
         //StartCoroutine(FadeInTrippy());
@@ -71,7 +67,8 @@ public class Transitions : MonoBehaviour
     public void FadePlayer()
     {
         player.transform.DOMoveZ(20, 8);
-        frontFade.GetComponent<MeshRenderer>().material.DOFade(1, 5);//.OnComplete(GoToEndScreen());
+        frontFade.GetComponent<MeshRenderer>().material.DOFade(1, 5);
+        StartCoroutine(FadeInEndCanvas());
     }
 
     IEnumerator FadeInTrippy()
@@ -84,6 +81,13 @@ public class Transitions : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         doneWithTrippyFade = true;
+    }
+
+    IEnumerator FadeInEndCanvas()
+    {
+        yield return new WaitForSeconds(8);
+        Instantiate(endCanvas, transform.position, Quaternion.identity);
+
     }
 
 }
