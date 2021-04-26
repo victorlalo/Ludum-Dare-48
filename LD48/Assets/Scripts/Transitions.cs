@@ -33,8 +33,9 @@ public class Transitions : MonoBehaviour
         c2.a = 0;
         frontFade.GetComponent<MeshRenderer>().material.SetColor("_Color", c);
 
+        trippy.GetComponent<VideoPlayer>().targetCameraAlpha = 0;
         //HouseTransition();
-        StartCoroutine(FadeInTrippy());
+        //StartCoroutine(FadeInTrippy());
         //NirvannaTransition();
         //SwapPlayerModels();
         //FadePlayer();
@@ -88,7 +89,7 @@ public class Transitions : MonoBehaviour
 
     IEnumerator FadeInEndCanvas()
     {
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(6);
         Instantiate(endCanvas, transform.position, Quaternion.identity);
 
     }
