@@ -53,6 +53,7 @@ public class Meditator : MonoBehaviour
 
     private float MaxGracePeriodFrames = 0.5f;
     private float currentGracePeriod;
+    private float cooldown;
 
     [SerializeField] AudioMixController mixer;
 
@@ -116,10 +117,10 @@ public class Meditator : MonoBehaviour
             
             if (BreathingIn && Input.GetKey(inBreath))
             {
-                if (projectilePrefab != null)
-                {
-                    Instantiate(projectilePrefab, projectileLaunchPoint.transform.position, projectileLaunchPoint.transform.rotation);
-                }
+                // if (projectilePrefab != null)
+                // {
+                //     Instantiate(projectilePrefab, projectileLaunchPoint.transform.position, projectileLaunchPoint.transform.rotation);
+                // }
             }
             BreathingIn = !BreathingIn;
             
@@ -148,10 +149,19 @@ public class Meditator : MonoBehaviour
         }
         else
         {
+            if (currentGracePeriod > 0 && Input.GetKeyUp(inBreath))
+            {
+                if (projectilePrefab != null && cooldown <= 0)
+                {
+                    Instantiate(projectilePrefab, projectileLaunchPoint.transform.position, projectileLaunchPoint.transform.rotation);
+                    cooldown = 0.5f;
+                }
+            }
+            
             if (currentGracePeriod > 0 || !Input.GetKey(inBreath))
             {
                 breathIndicatorMesh.material.color = exhaleColor;
-                breathIndicatorMesh.material.SetColor("_EmissionColor", exhaleColorEmission);
+                breathIndicatorMesh.material.SetColor("_EmissionColor", exhaleColorEmission); 
             }
             else
             {
@@ -161,6 +171,7 @@ public class Meditator : MonoBehaviour
 
         //concentrationBar.transform.localScale = new Vector3(originalConcentrationBarScale * currentConcentration / MaxConcentration, 1, 1);
         currentGracePeriod -= Time.deltaTime;
+        cooldown -= Time.deltaTime;
     }
 
     private void HandleBreathFuckUp()
