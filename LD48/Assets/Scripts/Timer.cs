@@ -37,27 +37,16 @@ public class Timer : MonoBehaviour
     private float fourthTransitionTime;
     private float fifthTransitionTime;
 
-    //private float firstTextTransition;
-    //private float secondTextTransition;
-    //private float thirdTextTransition;
-
-    private void Awake()
-    {
-    }
-
     // Start is called before the first frame update
     void Start()
     {
         transitions = GetComponent<Transitions>();
         
         firstTransitionTime = 40f;
-        //firstTextTransition = firstTransitionTime - 5f;
         secondTransitionTime = 30f + firstTransitionTime;
-        //secondTextTransition = secondTransitionTime - 5f;
         thirdTransitionTime = 20f + secondTransitionTime;
-        //thirdTextTransition = thirdTransitionTime - 5f;
-        fourthTransitionTime = 35f + thirdTransitionTime;
-        fifthTransitionTime = 12f + fourthTransitionTime; 
+        fourthTransitionTime = 22f + thirdTransitionTime;
+        fifthTransitionTime = 12f + fourthTransitionTime;
     }
 
     // Update is called once per frame
@@ -84,8 +73,8 @@ public class Timer : MonoBehaviour
         {
             mixer.PlayBellSFX();
             EndScreenText.text = "You reveal your true essence";
-            EndScreenText.DOColor(Color.black, 1f);
-            Backdrop.DOColor(backdropColor, 1f);
+            EndScreenText.DOColor(Color.white, 1f);
+            // Backdrop.DOColor(backdropColor, 1f);
             StartCoroutine(FadeOutText());
             transitions.SwapPlayerModels();
             transitionCount++;
@@ -94,8 +83,8 @@ public class Timer : MonoBehaviour
         {
             mixer.PlayBellSFX();
             EndScreenText.text = "You transcend this plane";
-            EndScreenText.DOColor(Color.black, 1f);
-            Backdrop.DOColor(backdropColor, 1f);
+            EndScreenText.DOColor(Color.white, 1f);
+            // Backdrop.DOColor(backdropColor, 1f);
             StartCoroutine(FadeOutText());
             transitions.TrippyTransition();
             transitionCount++;

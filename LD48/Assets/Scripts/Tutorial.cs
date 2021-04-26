@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
-    [SerializeField] private TMP_Text TutorialText;
+    [SerializeField] private TextMeshProUGUI TutorialText;
     [SerializeField] private Image backdrop;
     Color backdropColor;
     [SerializeField] private GameObject Player;
@@ -23,6 +24,8 @@ public class Tutorial : MonoBehaviour
 
     public bool skipTutorial = false;
 
+    private bool backDropInitialized;
+    
     private void Awake()
     {
         backdropColor = backdrop.color;
@@ -46,15 +49,11 @@ public class Tutorial : MonoBehaviour
             ("When the focus indicator grows, hold the space bar to breathe in", 0, null),
             ("When the focus indicator shrinks, release the space bar to exhale", 0, null),
             ("Try taking three deep breaths\n(Press on inhale, release on exhale)", 0, WaitForPerfectBreaths),
-            ("Good job!", 0, null),
+            ("Good job!", 0, () => { AudioMixController.PlayBellSFX(); return true; }),
             ("Press the left and right arrow keys to aim your breath", 0, null),
             ("Acknowledge distractions with a breath.", 0, StartGame)
         };
-
-        TutorialText.DOColor(Color.black, 3f).SetDelay(1.5f);
-        backdrop.DOColor(backdropColor, 3.5f).SetDelay(1.5f);
-
-
+        
         Meditator.PerfectBreath += () => perfectBreaths++;
 
         StartCoroutine(DisplayNextTutorialMessage());
@@ -63,9 +62,16 @@ public class Tutorial : MonoBehaviour
 
     private IEnumerator DisplayNextTutorialMessage()
     {
-        do
+        doh
         {
             yield return new WaitForSeconds(2);
+
+            if (!backDropInitialized)
+            {
+                backdrop.DOColor(backdropColor, 3.5f);
+                backDropInitialized = true;
+            }
+            
             TutorialText.DOColor(Color.black, 1f);
             var currentStep = TutorialSteps[currentMessage++];
             TutorialText.text = currentStep.message;

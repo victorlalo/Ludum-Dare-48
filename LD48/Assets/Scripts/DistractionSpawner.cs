@@ -37,7 +37,6 @@ public class DistractionSpawner : MonoBehaviour
         while (spawning)
         {
             Vector3 unitSemiCircle = RandomCircle(transform.position, radius);
-            //unitSemiCircle = new Vector3(unitSemiCircle.x, Mathf.Abs(unitSemiCircle.y), 0);
             if (unitSemiCircle.y < 0)
             {
                 unitSemiCircle.y = -unitSemiCircle.y;
@@ -46,9 +45,7 @@ public class DistractionSpawner : MonoBehaviour
 
             var distractionGameObject =
                 Instantiate(distractionPrefabs[Random.Range(0, distractionPrefabs.Length)], unitSemiCircle * radius + player.transform.position, Quaternion.Euler(new Vector3(0, 180, 0)), transform);
-
-            //Instantiate(debugCube, unitSemiCircle * radius, Quaternion.Euler(new Vector3(0, 180, 0)), transform);
-
+            
             distractionGameObject.transform.localScale *= iconScale;
 
             var distraction = distractionGameObject.GetComponent<Distraction>();
