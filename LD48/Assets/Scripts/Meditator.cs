@@ -87,7 +87,7 @@ public class Meditator : MonoBehaviour
         StartCoroutine(StartFloating());
     }
 
-    // Update is called once per frame
+    // Update is called once per frame 
     void Update()
     {
 
@@ -105,6 +105,12 @@ public class Meditator : MonoBehaviour
 
         var previousScale = breathIndicatorTransform.localScale.x;
         var scale = Remap(-1, 1, 0.3f, 1, breathPeriod);
+
+        if (scale > 0.9f && Input.GetKeyUp(inBreath) && BreathingIn)
+        {
+            Instantiate(projectilePrefab, projectileLaunchPoint.transform.position, projectileLaunchPoint.transform.rotation);
+            cooldown = 0.5f;
+        }
 
         // Checks if the scale of the breath indicator is growing or shrinking.
         // Growing means we are breathing in.
@@ -137,7 +143,7 @@ public class Meditator : MonoBehaviour
         breathIndicatorTransform.localScale = new Vector3(scale, scale, scale);
         if (BreathingIn)
         {
-            if (currentGracePeriod > 0 || Input.GetKey(inBreath))
+            if (currentGracePeriod > 0 || Input.GetKey(inBreath) || scale > 0.9f)
             {
                 breathIndicatorMesh.material.color = inhaleColor;
                 breathIndicatorMesh.material.SetColor("_EmissionColor", inhaleColorEmission);
