@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TutorialText: {fileID: 0}
+  backdrop: {fileID: 0}
   Player: {fileID: 0}
   Spawner: {fileID: 0}
   Timer: {fileID: 0}
+  AudioMixController: {fileID: 0}
+  skipTutorial: 0

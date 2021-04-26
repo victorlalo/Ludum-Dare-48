@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.012509877, g: 0.0038256003, b: 0.0054864283, a: 1}
+  m_IndirectSpecularColor: {r: 0.02532492, g: 0.007848698, b: 0.010936889, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -630,10 +630,6 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 72741725}
-    - target: {fileID: 1060727653, guid: 68089272e7428584fb180aff473a4799, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1303599056881870021, guid: 68089272e7428584fb180aff473a4799, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -899,22 +895,6 @@ PrefabInstance:
       propertyPath: EndScreenText
       value: 
       objectReference: {fileID: 1393463712}
-    - target: {fileID: 9103564580025538272, guid: 0b2be8cc237fca340bc6d1345eeacea4, type: 3}
-      propertyPath: backdropColor.a
-      value: 0.54901963
-      objectReference: {fileID: 0}
-    - target: {fileID: 9103564580025538272, guid: 0b2be8cc237fca340bc6d1345eeacea4, type: 3}
-      propertyPath: backdropColor.b
-      value: 0.6745098
-      objectReference: {fileID: 0}
-    - target: {fileID: 9103564580025538272, guid: 0b2be8cc237fca340bc6d1345eeacea4, type: 3}
-      propertyPath: backdropColor.g
-      value: 0.85882354
-      objectReference: {fileID: 0}
-    - target: {fileID: 9103564580025538272, guid: 0b2be8cc237fca340bc6d1345eeacea4, type: 3}
-      propertyPath: backdropColor.r
-      value: 0.85490197
-      objectReference: {fileID: 0}
     - target: {fileID: 9103564580025538273, guid: 0b2be8cc237fca340bc6d1345eeacea4, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -977,14 +957,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1639876443084300902, guid: a4d845cafe2a18b48af3d9e59e62592a, type: 3}
-      propertyPath: m_Color.a
-      value: 0.54901963
-      objectReference: {fileID: 0}
-    - target: {fileID: 7419623888342484468, guid: a4d845cafe2a18b48af3d9e59e62592a, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 425
-      objectReference: {fileID: 0}
     - target: {fileID: 9013779185917628551, guid: a4d845cafe2a18b48af3d9e59e62592a, type: 3}
       propertyPath: m_Name
       value: TutorialCanvas
@@ -1077,26 +1049,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9013779187261315437, guid: a4d845cafe2a18b48af3d9e59e62592a, type: 3}
-      propertyPath: m_text
-      value: Welcome to Deep Breathing
-      objectReference: {fileID: 0}
-    - target: {fileID: 9013779187261315437, guid: a4d845cafe2a18b48af3d9e59e62592a, type: 3}
-      propertyPath: m_fontSize
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 9013779187261315437, guid: a4d845cafe2a18b48af3d9e59e62592a, type: 3}
-      propertyPath: m_margin.x
-      value: -94.654526
-      objectReference: {fileID: 0}
-    - target: {fileID: 9013779187261315437, guid: a4d845cafe2a18b48af3d9e59e62592a, type: 3}
-      propertyPath: m_margin.z
-      value: -95.168396
-      objectReference: {fileID: 0}
-    - target: {fileID: 9013779187261315437, guid: a4d845cafe2a18b48af3d9e59e62592a, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4d845cafe2a18b48af3d9e59e62592a, type: 3}
 --- !u!114 &2038655312 stripped
@@ -1117,26 +1069,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 815155535955779340, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 08d1e5044ffd6bd42b94e8bd521ea64e, type: 3}
-    - target: {fileID: 815155536199110075, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 4.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 815155536199880091, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 08d1e5044ffd6bd42b94e8bd521ea64e, type: 3}
-    - target: {fileID: 815155536243083973, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 08d1e5044ffd6bd42b94e8bd521ea64e, type: 3}
-    - target: {fileID: 815155536245710637, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 08d1e5044ffd6bd42b94e8bd521ea64e, type: 3}
     - target: {fileID: 815155536496981750, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
       propertyPath: m_Name
       value: House
@@ -1185,30 +1117,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 815155536523069104, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 08d1e5044ffd6bd42b94e8bd521ea64e, type: 3}
-    - target: {fileID: 815155537103150888, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 08d1e5044ffd6bd42b94e8bd521ea64e, type: 3}
-    - target: {fileID: 815155537203947373, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 08d1e5044ffd6bd42b94e8bd521ea64e, type: 3}
-    - target: {fileID: 815155537335734094, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.10999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 815155537335734094, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.009999916
-      objectReference: {fileID: 0}
-    - target: {fileID: 815155537336504174, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 08d1e5044ffd6bd42b94e8bd521ea64e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9b732a6edb5e6045a2c15d0e0d0eead, type: 3}
 --- !u!1001 &2586962034980851924

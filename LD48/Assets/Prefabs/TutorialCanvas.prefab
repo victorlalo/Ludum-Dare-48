@@ -165,9 +165,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Welcome to Deep Breathing
-
-'
+  m_text: Welcome to Deep Breathing
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 33853459fe59711468c2b72094065964, type: 2}
   m_sharedMaterial: {fileID: 8616819914130556949, guid: 33853459fe59711468c2b72094065964, type: 2}
@@ -194,8 +192,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -230,7 +228,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -77.01236, y: -21.039734, z: -74.87671, w: -20.958889}
+  m_margin: {x: -83.19353, y: -21.039734, z: -85.46361, w: -20.958889}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -272,7 +270,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -66}
-  m_SizeDelta: {x: 370, y: 100}
+  m_SizeDelta: {x: 425, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &518984957952633991
 CanvasRenderer:
@@ -295,7 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.85535526, g: 0.8584906, b: 0.6762638, a: 0.54509807}
+  m_Color: {r: 0.85535526, g: 0.8584906, b: 0.6762638, a: 0.54901963}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
