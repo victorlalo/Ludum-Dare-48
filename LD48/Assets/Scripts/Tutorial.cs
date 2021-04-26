@@ -12,6 +12,7 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private GameObject Player;
     [SerializeField] private DistractionSpawner Spawner;
     [SerializeField] private Timer Timer;
+    [SerializeField] private AudioMixController AudioMixController;
 
     private int currentMessage;
     private int perfectBreaths;
@@ -67,6 +68,7 @@ public class Tutorial : MonoBehaviour
     private bool ShowPlayer()
     {
         Player.SetActive(true);
+        AudioMixController.PlayBellSFX();
         return true;
     }
 

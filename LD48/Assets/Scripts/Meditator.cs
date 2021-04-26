@@ -49,8 +49,8 @@ public class Meditator : MonoBehaviour
     
     private KeyCode inBreath = KeyCode.Space;
 
-    private int MaxGracePeriodFrames = 60 * 6;
-    private int currentGracePeriod;
+    private float MaxGracePeriodFrames = 0.5f;
+    private float currentGracePeriod;
 
     private bool BreathingIn
     {
@@ -58,7 +58,7 @@ public class Meditator : MonoBehaviour
         set
         {
             breathingIn = value;
-            currentGracePeriod = MaxGracePeriodFrames;
+            currentGracePeriod = MaxGracePeriodFrames; 
         }
     }
 
@@ -85,6 +85,7 @@ public class Meditator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print($"Current grace period = {currentGracePeriod}");
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             arrowPivotPoint.transform.Rotate(Vector3.forward, Time.deltaTime * rotationSpeed);
@@ -146,7 +147,7 @@ public class Meditator : MonoBehaviour
         }
 
         //concentrationBar.transform.localScale = new Vector3(originalConcentrationBarScale * currentConcentration / MaxConcentration, 1, 1);
-        currentGracePeriod -= 1;
+        currentGracePeriod -= Time.deltaTime;
     }
 
     private void HandleBreathFuckUp()
