@@ -1,9 +1,12 @@
 using System;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+
+    [SerializeField] private TMP_Text EndScreenText;
     public float StartTime { get; set; }
     public float CurrTime { get; set; }
 
@@ -40,6 +43,13 @@ public class Timer : MonoBehaviour
         thirdTransitionTime = 30f + secondTransitionTime;
         fourthTransitionTime = 50f + thirdTransitionTime;
         fifthTransitionTime = 80f + fourthTransitionTime;
+        
+        
+        firstTransitionTime = 1f;
+        secondTransitionTime = 2f + firstTransitionTime;
+        thirdTransitionTime = 2f + secondTransitionTime;
+        fourthTransitionTime = 2f + thirdTransitionTime;
+        fifthTransitionTime = 2f + fourthTransitionTime;
     }
 
     // Update is called once per frame
@@ -75,6 +85,8 @@ public class Timer : MonoBehaviour
         if (CurrTime > fifthTransitionTime && transitionCount == 4)
         {
             transitions.FadePlayer();
+            EndScreenText.text = "You have achieved nirvana.";
+            EndScreenText.DOColor(Color.black, 1f);
             transitionCount++;
         }
     }
