@@ -64,7 +64,7 @@ public class Timer : MonoBehaviour
             mixer.PlayBellSFX();
             EndScreenText.text = "Your concentration\ndeepens";
             EndScreenText.DOColor(Color.black, 1f);
-            Backdrop.DOColor(backdropColor, 1f);
+            // Backdrop.DOColor(backdropColor, 1f);
             StartCoroutine(FadeOutText());
             transitions.HouseTransition();
             transitionCount++;

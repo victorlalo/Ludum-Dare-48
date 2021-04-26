@@ -62,16 +62,9 @@ public class Tutorial : MonoBehaviour
 
     private IEnumerator DisplayNextTutorialMessage()
     {
-        doh
+        do
         {
             yield return new WaitForSeconds(2);
-
-            if (!backDropInitialized)
-            {
-                backdrop.DOColor(backdropColor, 3.5f);
-                backDropInitialized = true;
-            }
-            
             TutorialText.DOColor(Color.black, 1f);
             var currentStep = TutorialSteps[currentMessage++];
             TutorialText.text = currentStep.message;
@@ -88,6 +81,7 @@ public class Tutorial : MonoBehaviour
             yield return new WaitForSeconds(4f);
             TutorialText.DOColor(Color.clear, 1f);
         } while (currentMessage < TutorialSteps.Length);
+
         TutorialText.DOColor(Color.clear, 1f);
         backdrop.DOColor(Color.clear, 1f);
     }
